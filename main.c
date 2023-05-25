@@ -3,5 +3,5 @@
 
 
 int main() {
-    read_file("f");
+    read_file("instructions.ism");
 }
