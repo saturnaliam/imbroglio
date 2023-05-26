@@ -2,8 +2,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void die(char* error) {
-    printf(error);
+/**
+ * \brief Prints an error and exits the program
+ *
+ * \param error The error to print out
+ */
+void die(char* error, char* extra_values) {
+    printf("Error: %s %s", error, extra_values);
 
     exit(1);
 }
