@@ -1,0 +1,130 @@
+MVR ; putting 24 at 0
+ADT
+ADT
+ADT
+SUB
+SLP
+    MVL
+    ADT
+    MVR
+    SUB
+ELP
+
+MVL ; printing H
+SLP
+    MVR
+    ADT
+    MVL
+    SUB
+ELP
+MVR
+PUT
+
+MVL ; printing e
+ADT
+ADT
+ADT
+ADD
+SLP
+    MVR
+    ADT
+    MVL
+    SUB
+ELP
+MVR
+SUB
+PUT
+
+ADT ; printing the l's
+ADT
+ADD
+PUT
+PUT
+
+ADT ; printing o
+PUT
+
+MVR ; putting 22 at 2
+MVR
+ADT
+ADT
+ADD
+SLP
+    MVL
+    ADT
+    MVR
+    SUB
+ELP
+MVL
+ADD
+
+SLP ; printing ,
+    MVL
+    SBT
+    MVR
+    SUB
+ELP
+MVL
+SUB
+PUT
+
+SBT ; printing the space
+SBT
+SBT
+SBT
+PUT
+
+MVL ; printing the W
+ADT
+ADT
+SLP
+    MVR
+    ADT
+    ADT
+    ADT
+    MVL
+    SUB
+ELP
+MVR
+ADD
+PUT
+
+ADT ; printing the o in a dirty way
+ADT
+ADT
+ADT
+ADT
+ADT
+ADT
+ADT
+PUT
+
+ADT ; printing the r
+PUT
+
+SBT ; printing the l
+SBT
+PUT
+
+SBT ; printing the d
+SBT
+SBT
+ADD
+PUT
+
+MVL ; printing the !
+ADT
+ADT
+SLP
+    MVR
+    SBT
+    SBT
+    SBT
+    SBT
+    ADD
+    MVL
+    SUB
+ELP
+MVR
+SUB
+PUT

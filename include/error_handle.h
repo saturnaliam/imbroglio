@@ -1,1 +1,1 @@
-void die(char* error, char* extra_values);
+void die(char* error, ...);
