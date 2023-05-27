@@ -23,7 +23,7 @@ void die(char* error, ...) {
     va_start(args, error);
     vsnprintf(message, length + 1, error, args);
     va_end(args);
-    printf("Error: %s.", message);
+    printf("\x1b[31mError: %s.\x1b[37m", message);
 
     exit(1);
 }
