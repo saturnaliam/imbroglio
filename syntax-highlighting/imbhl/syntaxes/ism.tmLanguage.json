@@ -1,0 +1,37 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Imbroglio",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#ctrl-statements"
+		},
+		{
+			"include": "#keywords"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [{
+				"begin": ";",
+				"end": "\n",
+				"name": "comment.line"
+			}]
+		},
+		"ctrl-statements": {
+			"patterns": [{
+				"name": "keyword.control",
+				"match": "\\b(SLP|ELP)\\b"
+			}]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.ism",
+				"match": "\\b(ADD|SUB|ADT|SBT|MVR|MVL|MRT|MLT|PUT|GET)\\b"
+			}]
+		}
+	},
+	"scopeName": "source.ism"
+}

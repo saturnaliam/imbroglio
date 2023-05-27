@@ -1,0 +1,25 @@
+{
+  "name": "imbhl",
+  "displayName": "Imbroglio Highlighting",
+  "description": "Highlighting for Imbrolgio",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "ism",
+      "aliases": ["Imbroglio", "ism"],
+      "extensions": [".ism"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "ism",
+      "scopeName": "source.ism",
+      "path": "./syntaxes/ism.tmLanguage.json"
+    }]
+  }
+}
