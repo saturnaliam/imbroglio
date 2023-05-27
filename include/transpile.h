@@ -1,1 +1,1 @@
-void transpile(char* program);
+void transpile(char* program, char* output_file);

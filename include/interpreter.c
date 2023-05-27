@@ -12,11 +12,16 @@
  *
  * \param file The file containing the program
  */
-void interpret_program(char *file) {
+void interpret_program(char* file) {
     char* program = read_file(file);
 
+    int ptr, loop_ptr = 0;
+    int loop_index = 0;
+    int prev_print = 0;
+
+    int looping = 0; // bool the in
+
     int tape[TAPE_SIZE] = { [0 ... TAPE_SIZE - 1] = 0 };
-    int ptr, looping, loop_index, loop_ptr, prev_print = 0; // 🤓 this is bad practice!! stfu nerd
 
     for (int i = 0; i < strlen(program); i++) {
         char c = program[i];

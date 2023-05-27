@@ -45,30 +45,30 @@ char* format_file(char* program) {
     // the program w/o the spaces, comments, and newlines
     char* stripped = malloc(strlen(program));
 
-    int commented = 0; // need them all on different lines or i segfault lmao
-    int stripped_index = 0;
+    int stripped_index = 0; // need them all on different lines or i segfault lmao
     int formatted_index = 0;
     int line_index = 0;
+
+    int opened_loop = 0; // bool the in
+    int commented = 0;
 
     // Removing spaces and comments
     for (int i = 0; i < strlen(program); i++) {
         char c = program[i];
 
         if (!commented) {
-            if (c <= 32 && c != 10) { // checking if the character is a special character
+            if (c <= 32 && c != 10) {
                 continue;
-            } else if (c == ';') { // checking if theres a comment
+            } else if (c == ';') {
                 commented = 1;
                 continue;
             } else {
-                stripped[stripped_index] = c;
-                stripped_index++;
+                stripped[stripped_index++] = c;
             }
         } else {
             if (c == 10) {
                 commented = 0;
-                stripped[stripped_index] = 10;
-                stripped_index++;
+                stripped[stripped_index++] = 10;
             }
         }
     }
@@ -78,17 +78,15 @@ char* format_file(char* program) {
     stripped = realloc(stripped, stripped_index);
 
     char* formatted = malloc(strlen(stripped));
-
     char* current_line = malloc(strlen(stripped));
+
     int line_num = 1;
-    int opened_loop = 0;
 
     for (int i = 0; i < strlen(stripped); i++) {
-        int identified = 0;
+        int identified = 0; // bool
 
         char c = stripped[i];
-        current_line[line_index] = c;
-        line_index++;
+        current_line[line_index++] = c;;
 
         if (c == 10) {
             if (strcmp(current_line, "\n") != 0) {
@@ -96,8 +94,7 @@ char* format_file(char* program) {
 
                 for (int j = 0; j < 12; j++) {
                     if (strcmp(KEYWORDS[j].identifier, current_line) == 0 ) {
-                        formatted[formatted_index] = KEYWORDS[j].value;
-                        formatted_index++;
+                        formatted[formatted_index++] = KEYWORDS[j].value;
                         identified = 1;
 
                         if (KEYWORDS[j].value == ']') {
@@ -133,7 +130,6 @@ char* format_file(char* program) {
     }
 
     formatted = realloc(formatted, formatted_index);
-
     free(current_line);
     free(stripped);
     return formatted;
