@@ -34,7 +34,6 @@ void remove_extension(char* file_name) {
 void transpile(char* program, char* output_file) {
     char* transpiled = malloc(strlen(program) * 3); // times three to account for worst case (all move threes)
     int transpiled_index = 0;
-    printf("%d\n", strlen(program));
 
     for (int i = 0; i < strlen(program); i++) {
         char c = program[i];
@@ -102,7 +101,7 @@ void transpile(char* program, char* output_file) {
     file = fopen(output_file, "w");
 
     if (file == NULL) {
-        die("error writing to file", output_file);
+        die("error writing to file %s", output_file);
     }
 
 

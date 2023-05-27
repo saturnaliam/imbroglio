@@ -12,11 +12,13 @@ int main(int argc, char* argv[]) {
     if (argc == 2) {
         interpret_program(argv[1]);
     } else if (argc == 3) {
-        if (strcmp(argv[1], "-t") == 0) {
+        if (strcmp(argv[1], "-t") == 0 || strcmp(argv[1], "-transpile") == 0) {
             char* program = read_file(argv[2]);
             transpile(program, argv[2]);
 
             free(program);
+        }  else {
+            die("unknown flag %s", argv[1]);
         }
     }
 }
